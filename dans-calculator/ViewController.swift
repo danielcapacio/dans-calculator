@@ -30,6 +30,7 @@ class ViewController: UIViewController {
     
     @IBAction func buttons(_ sender: UIButton) {
         // going to check if there is a number there
+        // tag 11 is 'Clear', tag 16 is equals sign
         if (label.text != "" && sender.tag != 11 && sender.tag != 16) {
             previousNumber = Double(label.text!)!;
             switch (sender.tag) {
@@ -50,7 +51,7 @@ class ViewController: UIViewController {
             }
             operation = sender.tag;
             performingMath = true;
-        } else if (sender.tag == 16) {
+        } else if (sender.tag == 16) { // tag 16 is equals sign
             switch (operation) {
                 case 12: // divide
                     label.text = String(previousNumber / numberOnScreen);
@@ -67,7 +68,7 @@ class ViewController: UIViewController {
                 default:
                     break;
             }
-        } else if (sender.tag == 11) { // reset button
+        } else if (sender.tag == 11) { // tag 11 is 'Clear'
             label.text = "";
             previousNumber = 0;
             numberOnScreen = 0;
